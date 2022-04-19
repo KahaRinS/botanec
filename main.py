@@ -4,6 +4,7 @@ from datetime import datetime
 from MessageText import MessageText
 from sender import sender, longpoll, vk, VkBotEventType, sender_photo
 from vk_api import VkUpload
+#from sql import Search
 
 now = datetime.now().strftime('%H')
 
@@ -13,7 +14,6 @@ def Main(id, text):
         msg = MessageText(text)
         msg.Lower()
         msg.DeleteSymbols()
-        #id = event.chat_id
         if msg.msg == 'ботанек':
             if int(now) < 12:
                 sender(id, 'Добрый вечер')
